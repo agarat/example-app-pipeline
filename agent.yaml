@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Pod
+spec:
+  serviceAccountName: default
+  containers:
+  - name: sonar-scanner
+    image: newtmitch/sonar-scanner
+    command:
+    - cat
