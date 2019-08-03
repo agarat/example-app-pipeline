@@ -1,13 +1,9 @@
 @Library('jenkins-shared-library') _
 
 pipeline {
-    agent {
-        kubernetes {
-            yamlFile 'agent.yaml'
-        }
-    }
+    agent any
     stages {
-        stage('SonarQube analysis') {
+        /*stage('SonarQube analysis') {
             steps {
                 container('sonar-scanner') {
                     // requires SonarQube Scanner 2.8+
@@ -21,7 +17,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
         stage('Using shared library') {
             testMySharedLibrary
         }
